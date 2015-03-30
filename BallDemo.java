@@ -40,22 +40,22 @@ public class BallDemo
             int posX = randomGenerator.nextInt(550) + 25;
             int posY = randomGenerator.nextInt(450) + 25;
             int ballD = randomGenerator.nextInt(15)+ 5;
-            int ballC = randomGenerator.nextInt(2);
+            int ballC = randomGenerator.nextInt(3);
             
             if(ballC == 0)
             {
-                BallList[numBalls] = new BoxBall(posX, posY, ballD, Color.RED, 0, 500, 0, 600, myCanvas);
-                BallList[numBalls].draw();
+                BallList[i] = new BoxBall(posX, posY, ballD, Color.RED, 0, 500, 0, 600, myCanvas);
+                BallList[i].draw();
             }
             if(ballC == 1)
             {
-                BallList[numBalls] = new BoxBall(posX, posY, ballD, Color.BLUE, 0, 500, 0, 600, myCanvas);
-                BallList[numBalls].draw();
+                BallList[i] = new BoxBall(posX, posY, ballD, Color.BLUE, 0, 500, 0, 600, myCanvas);
+                BallList[i].draw();
             }       
             if(ballC == 2)
             {
-                BallList[numBalls] = new BoxBall(posX, posY, ballD, Color.GREEN, 0, 500, 0, 600, myCanvas);
-                BallList[numBalls].draw();
+                BallList[i] = new BoxBall(posX, posY, ballD, Color.GREEN, 0, 500, 0, 600, myCanvas);
+                BallList[i].draw();
             }
         }
         // draw the ground
@@ -73,7 +73,7 @@ public class BallDemo
         while(!finished) 
         {
             myCanvas.wait(50);           // small delay
-            for(int j = 0; j<numBalls;j++)
+            for(int j = 1; j<numBalls;j++)
             {
                 BallList[j].move();
             }
