@@ -32,35 +32,36 @@ public class BallDemo
      */
     public void bounce()
     {
-        int ground = 400;   // position of the ground line
-        int numBalls = randomGenerator.nextInt(35) + 15;
+        //int ground = 400;   // position of the ground line
         myCanvas.setVisible(true);
-        for(int i = 0; i<numBalls;i++)
+        for(int i = 0; i< numBalls;i++)
         {
-            int posX = randomGenerator.nextInt(550) + 25;
-            int posY = randomGenerator.nextInt(450) + 25;
+            int posX = randomGenerator.nextInt(450) + 75;
+            int posY = randomGenerator.nextInt(300) + 75;
             int ballD = randomGenerator.nextInt(15)+ 5;
             int ballC = randomGenerator.nextInt(3);
             
             if(ballC == 0)
             {
-                BallList[i] = new BoxBall(posX, posY, ballD, Color.RED, 0, 500, 0, 600, myCanvas);
+                BallList[i] = new BoxBall(posX, posY, ballD, Color.RED, 50, 450, 50, 550, myCanvas);
                 BallList[i].draw();
             }
             if(ballC == 1)
             {
-                BallList[i] = new BoxBall(posX, posY, ballD, Color.BLUE, 0, 500, 0, 600, myCanvas);
+                BallList[i] = new BoxBall(posX, posY, ballD, Color.BLUE, 50, 450, 50, 550, myCanvas);
                 BallList[i].draw();
             }       
             if(ballC == 2)
             {
-                BallList[i] = new BoxBall(posX, posY, ballD, Color.GREEN, 0, 500, 0, 600, myCanvas);
+                BallList[i] = new BoxBall(posX, posY, ballD, Color.GREEN, 50, 450, 50, 550, myCanvas);
                 BallList[i].draw();
             }
         }
         // draw the ground
         myCanvas.drawLine(50, 50, 550, 50);
         myCanvas.drawLine(50, 50, 50, 450);
+        myCanvas.drawLine(50, 450, 550, 450);
+        myCanvas.drawLine(550, 50, 550, 450);
         // crate and show the balls
         //BouncingBall ball = new BouncingBall(50, 50, 16, Color.BLUE, ground, myCanvas);
         //ball.draw();
@@ -73,11 +74,15 @@ public class BallDemo
         while(!finished) 
         {
             myCanvas.wait(50);           // small delay
-            for(int j = 1; j<numBalls;j++)
+            for(int j = 0; j<numBalls;j++)            
             {
                 BallList[j].move();
+                myCanvas.drawLine(50, 50, 550, 50);
+                myCanvas.drawLine(50, 50, 50, 450);
+                myCanvas.drawLine(50, 450, 550, 450);
+                myCanvas.drawLine(550, 50, 550, 450);
             }
-
+            
         }
     }
 }
