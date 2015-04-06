@@ -39,23 +39,14 @@ public class BallDemo
             int posX = randomGenerator.nextInt(450) + 75;
             int posY = randomGenerator.nextInt(300) + 75;
             int ballD = randomGenerator.nextInt(15)+ 5;
-            int ballC = randomGenerator.nextInt(3);
+            int ballS = randomGenerator.nextInt(5) + 1;
+            int red = randomGenerator.nextInt(128)+64;
+            int green = randomGenerator.nextInt(128+64);
+            int blue = randomGenerator.nextInt(128)+64;
+            Color randomColor = new Color(red, green, blue);
+            BallList[i] = new BoxBall(posX, posY, ballD, randomColor, 50, 450, 50, 550, myCanvas, ballS);
+            BallList[i].draw();
             
-            if(ballC == 0)
-            {
-                BallList[i] = new BoxBall(posX, posY, ballD, Color.RED, 50, 450, 50, 550, myCanvas);
-                BallList[i].draw();
-            }
-            if(ballC == 1)
-            {
-                BallList[i] = new BoxBall(posX, posY, ballD, Color.BLUE, 50, 450, 50, 550, myCanvas);
-                BallList[i].draw();
-            }       
-            if(ballC == 2)
-            {
-                BallList[i] = new BoxBall(posX, posY, ballD, Color.GREEN, 50, 450, 50, 550, myCanvas);
-                BallList[i].draw();
-            }
         }
         // draw the ground
         myCanvas.drawLine(50, 50, 550, 50);

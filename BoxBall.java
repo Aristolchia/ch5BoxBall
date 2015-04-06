@@ -20,8 +20,9 @@ public class BoxBall
     private Canvas canvas;
     private int ySpeed = 1;                // initial downward speed
     private int xSpeed = 1;
+    private int ballSpeed;
 
-    public BoxBall(int xPos, int yPos, int ballDiameter, Color ballColor, int groundPos, int topPos, int leftPos, int rightPos, Canvas drawingCanvas)
+    public BoxBall(int xPos, int yPos, int ballDiameter, Color ballColor, int groundPos, int topPos, int leftPos, int rightPos, Canvas drawingCanvas, int ballS)
     {
         xPosition = xPos;
         yPosition = yPos;
@@ -32,6 +33,7 @@ public class BoxBall
         rightPosition = rightPos;
         leftPosition = leftPos;
         canvas = drawingCanvas;
+        ballSpeed = ballS;
     }
 
     /**
@@ -60,8 +62,8 @@ public class BoxBall
         erase();
             
         // compute new position
-        yPosition += (2*ySpeed);
-        xPosition += (2*xSpeed);
+        yPosition += (ballSpeed*ySpeed);
+        xPosition += (ballSpeed*xSpeed);
 
         // check if it has hit the ground
         if(yPosition <= (groundPosition)) {
