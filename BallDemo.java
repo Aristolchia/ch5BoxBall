@@ -24,8 +24,8 @@ public class BallDemo
      */
     public BallDemo()
     {
-        myCanvas = new Canvas("Ball Demo", 600, 500);
-        //myCanvas = new Canvas("Ball Demo", 800, 200);
+        //myCanvas = new Canvas("Ball Demo", 600, 500);
+        myCanvas = new Canvas("Ball Demo", 800, 200);
     }
 
     /**
@@ -42,8 +42,8 @@ public class BallDemo
         myCanvas.setVisible(true);
         for(int i = 0; i< numBalls;i++)
         {
-            int posX = randomGenerator.nextInt(w-16-2*offset) + offset+8;
-            int posY = randomGenerator.nextInt(h-16-2*offset) + offset+8;
+            int posX = randomGenerator.nextInt(w-20-2*offset) + offset;
+            int posY = randomGenerator.nextInt(h-20-2*offset) + offset;
             int ballD = randomGenerator.nextInt(15)+ 5;
             int ballS = randomGenerator.nextInt(5) + 1;
             int red = randomGenerator.nextInt(128)+64;
