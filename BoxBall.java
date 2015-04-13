@@ -1,10 +1,10 @@
 import java.awt.*;
 import java.awt.geom.*;
 /**
- * Write a description of class BoxBall here.
+ * The foundation for a ball that will bounce within a specified box,
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Chris Wallace
+ * @version 4/13/15
  */
 public class BoxBall
 {
@@ -52,9 +52,9 @@ public class BoxBall
     {
         canvas.eraseCircle(xPosition, yPosition, diameter);
     }    
-
+    
     /**
-     * Move this ball according to its position and speed and redraw.
+     * Move this ball according to its position and speed and redraw. Balls Bounce off of the walls
      **/
     public void move()
     {

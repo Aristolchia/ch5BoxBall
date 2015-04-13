@@ -39,6 +39,9 @@ public class Canvas
     public Canvas(String title, int width, int height)
     {
         this(title, width, height, Color.white);
+        Dimension d = canvas.getSize();
+        double w = d.getWidth();
+        double h  = d.getHeight();
     }
 
     /**
@@ -321,14 +324,7 @@ public class Canvas
         graphic.drawImage(oldImage, 0, 0, null);
         frame.pack();
     }
-    public int getWidth(int width)
-    {
-        return width;
-    }
-    public int getHeight(int height)
-    {
-        return height;
-    }
+    
 
     /**
      * Returns the size of the canvas.
@@ -338,7 +334,6 @@ public class Canvas
     {
         return canvas.getSize();
     }
-
     /**
      * Waits for a specified number of milliseconds before finishing.
      * This provides an easy way to specify a small delay which can be
